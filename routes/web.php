@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\GenresController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,4 @@ Route::get('/movies/add', [MoviesController::class, 'create']);
 Route::post('/movies', [MoviesController::class, 'store']);
 Route::get('/movie/{movie}', [MoviesController::class, 'show'])->name('movie');
 Route::post('/movies/{movie}/comments', [CommentsController::class, 'store'])->name('createComment');
+Route::get('/genres/{genre}', [GenresController::class, 'show'])->name('genre'); 
